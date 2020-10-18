@@ -1,10 +1,19 @@
-import React from "react";
+import React from 'react';
 
-import { StylesProvider } from "@material-ui/styles";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { StylesProvider } from '@material-ui/styles';
 
-const StylesDecorator = storyFn => (
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+
+import LightTheme from '../src/themes/light-theme';
+
+const StylesDecorator = (storyFn) => (
   <StylesProvider injectFirst>
-    {storyFn()}
+    <CssBaseline />
+    <StyledThemeProvider theme={LightTheme}>
+      <MuiThemeProvider theme={LightTheme}>{storyFn()}</MuiThemeProvider>
+    </StyledThemeProvider>
   </StylesProvider>
 );
 
