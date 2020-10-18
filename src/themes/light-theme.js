@@ -1,17 +1,21 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
-import blue from '@material-ui/core/colors/blue';
+import purple from '@material-ui/core/colors/purple';
 
 const primaryGreen = green[500];
 const accentGreen = green.A200;
 const darkGreen = green[900];
-const primaryBlue = blue[500];
-const accentBlue = blue.A200;
-const darkBlue = blue[900];
+const primaryPurple = purple[500];
+const accentPurple = purple.A200;
+const darkPurple = purple[900];
 
 export const overridings = {
   name: 'Light Theme',
   palette: {
+    awesomeColors: {
+      primary: '#fe6b8b',
+      secondary: '#ff8e53',
+    },
     primary: {
       light: accentGreen,
       main: primaryGreen,
@@ -19,9 +23,9 @@ export const overridings = {
       contrastText: '#fff',
     },
     secondary: {
-      light: accentBlue,
-      main: primaryBlue,
-      dark: darkBlue,
+      light: accentPurple,
+      main: primaryPurple,
+      dark: darkPurple,
       contrastText: '#fff',
     },
   },
