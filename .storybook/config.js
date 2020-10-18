@@ -1,10 +1,16 @@
-import { addDecorator, configure } from '@storybook/react';
-
+import { addDecorator, addParameters, configure } from '@storybook/react';
+import omega from './omega';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import ThemeProvider from './theme-provider';
 
 import LightTheme from '../src/themes/light-theme';
 import DarkTheme from '../src/themes/dark-theme';
+
+addParameters({
+  options: {
+    theme: omega,
+  },
+});
 
 const themes = [LightTheme, DarkTheme];
 addDecorator(withThemesProvider(themes, ThemeProvider));
