@@ -2,8 +2,9 @@ import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import Layout from './Layout';
+import StylesDecorator from './styles-decorator'
 
-
+addDecorator(StylesDecorator);
 addDecorator(storyFn => <Layout>{storyFn()}</Layout>);
 addDecorator(withInfo({
   inline: true,
